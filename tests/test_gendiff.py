@@ -19,6 +19,7 @@ def read_fixture(filename):
     ("file1", "file2", "expected"),
     [
         ("file1.json", "file2.json", "expected_stylish.txt"),
+        ("file1.yml", "file2.yml", "expected_stylish.txt"),
     ],
 )
 def test_generate_diff_flat_json(file1, file2, expected):

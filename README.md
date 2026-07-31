@@ -6,3 +6,6 @@
 
 # Аскинема работы пакета на 5м шаге
 https://asciinema.org/a/kXpZkLRChIsxU9rj
+
+# Аскинема 6й шаг
+https://asciinema.org/a/kMEIQRYQc7k4SqGg
