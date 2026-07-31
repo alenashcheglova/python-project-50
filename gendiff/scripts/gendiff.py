@@ -1,8 +1,8 @@
 import argparse
 
-from gendiff.parser import parse_file
-from gendiff.formatters.format_diff import format_diff
 from gendiff.build_diff import build_diff
+from gendiff.formatters.format_diff import format_diff
+from gendiff.parser import parse_file
 
 
 def generate_diff(file_path1: str, file_path2: str, 
