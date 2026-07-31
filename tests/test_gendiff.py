@@ -27,3 +27,4 @@ def test_generate_diff_flat_json(file1, file2, expected):
     expected_result = read_fixture(expected)
 
     assert generate_diff(file_path1, file_path2) == expected_result.strip()
+
