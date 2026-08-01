@@ -9,3 +9,6 @@ https://asciinema.org/a/kXpZkLRChIsxU9rj
 
 # Аскинема 6й шаг
 https://asciinema.org/a/kMEIQRYQc7k4SqGg
+
+# Аскинема 7й шаг
+https://asciinema.org/a/bvrvC9JY9pGUtxM2
