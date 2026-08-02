@@ -35,21 +35,37 @@ def read_fixture(filename):
 def test_generate_diff_stylish(file1, file2, expected):
     file_path1 = get_fixture_path(file1)
     file_path2 = get_fixture_path(file2)
-    expected_result = read_fixture(expected)
+    expected_result = read_fixture(expected).strip()
 
-    assert generate_diff(file_path1, file_path2) == expected_result.strip()
+    assert generate_diff(file_path1, file_path2) == expected_result
 
 
 @pytest.mark.parametrize(
-    ("file1", "file2"),
+    ("file1", "file2", "expected"),
     [
-        ("nested_file1.json", "nested_file2.json"),
-        ("nested_file1.yml", "nested_file2.yml"),
+        ("nested_file1.json", "nested_file2.json", "nested_expected_plain.txt"),
+        ("nested_file1.yml", "nested_file2.yml", "nested_expected_plain.txt"),
     ],
 )
-def test_generate_diff_plain(file1, file2):
+def test_generate_diff_plain(file1, file2, expected):
     file_path1 = get_fixture_path(file1)
     file_path2 = get_fixture_path(file2)
-    expected_result = read_fixture("nested_expected_plain.txt").strip()
+    
+    expected_result = read_fixture(expected).strip()
 
     assert generate_diff(file_path1, file_path2, "plain") == expected_result
+
+
+@pytest.mark.parametrize(
+    ("file1", "file2", "expected"),
+    [
+        ("nested_file1.json", "nested_file2.json", "nested_expected_json.txt"),
+        ("nested_file1.yml", "nested_file2.yml", "nested_expected_json.txt"),
+    ],
+)
+def test_generate_diff_json(file1, file2, expected):
+    file_path1 = get_fixture_path(file1)
+    file_path2 = get_fixture_path(file2)
+    expected_result = read_fixture(expected).strip()
+
+    assert generate_diff(file_path1, file_path2, "json") == expected_result

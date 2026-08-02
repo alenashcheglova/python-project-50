@@ -2,3 +2,13 @@ __pycache__/
 *.pyc
 .venv/
 dist/
+.pytest_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+build/
+*.egg-info/
+*.egg
+*.cast
+uv.lock
+.python-version

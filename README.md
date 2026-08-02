@@ -7,11 +7,14 @@
 # Аскинема работы пакета на 5м шаге
 https://asciinema.org/a/kXpZkLRChIsxU9rj
 
-# Аскинема 6й шаг
+# Аскинема 7й шаг
 https://asciinema.org/a/kMEIQRYQc7k4SqGg
 
-# Аскинема 7й шаг
+# Аскинема 8й шаг
 https://asciinema.org/a/bvrvC9JY9pGUtxM2
 
-# Аскинема 8й шаг
+# Аскинема 9й шаг
 https://asciinema.org/a/kDFuZY9SHcdlwUSx
+
+# Аскинема 10й шаг
+https://asciinema.org/a/iZk2IpGZwTwnckoE
