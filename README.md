@@ -12,3 +12,6 @@ https://asciinema.org/a/kMEIQRYQc7k4SqGg
 
 # Аскинема 7й шаг
 https://asciinema.org/a/bvrvC9JY9pGUtxM2
+
+# Аскинема 8й шаг
+https://asciinema.org/a/kDFuZY9SHcdlwUSx

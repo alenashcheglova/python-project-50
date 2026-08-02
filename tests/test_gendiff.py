@@ -38,3 +38,18 @@ def test_generate_diff_stylish(file1, file2, expected):
     expected_result = read_fixture(expected)
 
     assert generate_diff(file_path1, file_path2) == expected_result.strip()
+
+
+@pytest.mark.parametrize(
+    ("file1", "file2"),
+    [
+        ("nested_file1.json", "nested_file2.json"),
+        ("nested_file1.yml", "nested_file2.yml"),
+    ],
+)
+def test_generate_diff_plain(file1, file2):
+    file_path1 = get_fixture_path(file1)
+    file_path2 = get_fixture_path(file2)
+    expected_result = read_fixture("nested_expected_plain.txt").strip()
+
+    assert generate_diff(file_path1, file_path2, "plain") == expected_result
