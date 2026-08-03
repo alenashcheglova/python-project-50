@@ -8,16 +8,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Check out repository
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@0b93645e5fea7318ecaed2b359559ac225c90a2b
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
       - name: Install dependencies
         run: |
-          # Исправлена уязвимость L20: добавили флаг --only-binary и зафиксировали версию
           pip install --only-binary :all: uv==0.3.0
           make install
 
@@ -28,7 +28,7 @@ jobs:
         run: make test-coverage
 
       - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@7295e71c9583053f5bf40e9d4068a0c974603ec8
+        uses: SonarSource/sonarqube-scan-action@v4
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
