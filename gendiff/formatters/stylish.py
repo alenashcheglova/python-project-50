@@ -5,12 +5,8 @@ def format_value(value, depth, indent_size=4):
         indent = ' ' * (depth * indent_size)
         lines = []
         for key, val in value.items():
-            if isinstance(val, dict):
-                lines.append(f"{indent}    {key}: "
-                             f"{format_value(val, depth + 1)}")
-            else:
-                lines.append(f"{indent}    {key}: "
-                             f"{format_value(val, depth + 1)}")
+            lines.append(f"{indent}    {key}: "
+                         f"{format_value(val, depth + 1)}")
         return '{\n' + '\n'.join(lines) + f'\n{indent}}}'
     elif isinstance(value, bool):
         return 'true' if value else 'false'

@@ -34,4 +34,6 @@ jobs:
           args: >
             -Dsonar.projectKey=alenashcheglova_python-project-50
             -Dsonar.organization=alenashcheglova
+            -Dsonar.sources=gendiff
+            -Dsonar.tests=tests
             -Dsonar.python.coverage.reportPaths=coverage.xml
