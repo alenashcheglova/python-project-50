@@ -8,16 +8,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
 
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@0b93645e5fea7318ecaed2b359559ac225c90a2b
         with:
           python-version: '3.12'
 
       - name: Install dependencies
         run: |
-          pip install uv
+          # Исправлена уязвимость L20: добавили флаг --only-binary и зафиксировали версию
+          pip install --only-binary :all: uv==0.3.0
           make install
 
       - name: Run linter and pytest
@@ -27,7 +28,7 @@ jobs:
         run: make test-coverage
 
       - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@v7
+        uses: SonarSource/sonarqube-scan-action@7295e71c9583053f5bf40e9d4068a0c974603ec8
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
